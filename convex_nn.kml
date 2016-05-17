@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
+ </Style>
+ <Style id="l1">
+ <LineStyle>
+ <color>#ff0000ff</color>
+ <width>5</width>
+  </LineStyle>
+ </Style>
+<Placemark><name>1248 W Adams Blvd</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2900027,34.0324814</coordinates></Point>
+</Placemark>
+<Placemark><name>Leavey Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2849528,34.0218051</coordinates></Point>
+</Placemark>
+<Placemark><name>Ralphs</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2929785,34.0318873</coordinates></Point>
+</Placemark>
+<Placemark><name>Doheny Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2859253,34.0201484</coordinates></Point>
+</Placemark>
+<Placemark><name>Viterbi School</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2913448,34.0208792</coordinates></Point>
+</Placemark>
+<Placemark><name>Marshall School</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2879914,34.0188336</coordinates></Point>
+</Placemark>
+<Placemark><name>Annenberg School</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2883432,34.0220383</coordinates></Point>
+</Placemark>
+<Placemark><name>Manas</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2939322,34.0288108</coordinates></Point>
+</Placemark>
+<Placemark><name>Lyon Center</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2905299,34.0243718</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<styleUrl>#SwathPolygonStyle</styleUrl>
+<MultiGeometry>
+<Polygon>
+<outerBoundaryIs>
+<LinearRing>
+<coordinates>
+-118.2879914,34.0188336
+-118.2913448,34.0208792
+-118.2939322,34.0288108
+-118.2929785,34.0318873
+-118.2900027,34.0324814
+-118.2849528,34.0218051
+-118.2859253,34.0201484
+-118.2879914,34.0188336
+</coordinates>
+</LinearRing>
+</outerBoundaryIs>
+</Polygon>
+</MultiGeometry>
+</Placemark>
+
+<Placemark> 
+	<styleUrl>#l1</styleUrl>
+	 <LineString>
+		  <coordinates>
+		   -118.2900027,34.0324814,0. 
+		   -118.2929785,34.0318873,0
+		  </coordinates>
+	  </LineString>
+ </Placemark>
+  
+ <Placemark>
+	<styleUrl>#l1</styleUrl>
+		<LineString>
+		  <coordinates>
+		   -118.2900027,34.0324814,0. 
+		   -118.2939322,34.0288108,0
+		  </coordinates>
+		</LineString>
+   </Placemark>
+ 
+ <Placemark>
+	<styleUrl>#l1</styleUrl>
+		<LineString>
+			<coordinates>
+			   -118.2900027,34.0324814,0. 
+			   -118.2905299,34.0243718,0
+			  </coordinates>
+		</LineString>
+ </Placemark>
+
+
+</Document></kml>

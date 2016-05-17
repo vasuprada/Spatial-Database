@@ -1,0 +1,41 @@
+------------------------------------
+TABLE CREATION AND INSERT VALUES:
+------------------------------------
+CREATE TABLE mypoints ( 
+id SERIAL PRIMARY KEY,
+name VARCHAR(64),
+location GEOMETRY(POINT,4326));
+
+
+INSERT INTO mypoints (name, location) VALUES
+('1248 W Adams Blvd', ST_SetSRID(ST_MakePoint(-118.2900027,34.0324814), 4326)),
+('Leavey Library', ST_SetSRID(ST_MakePoint(-118.2849528,34.0218051), 4326)),
+('Ralphs', ST_SetSRID(ST_MakePoint(-118.2929785,34.0318873), 4326)),
+('Doheny Library', ST_SetSRID(ST_MakePoint(-118.2859253,34.0201484), 4326)),
+('Viterbi School', ST_SetSRID(ST_MakePoint(-118.2913448,34.0208792), 4326)),
+('Marshall School', ST_SetSRID(ST_MakePoint(-118.2879914,34.0188336), 4326)),
+('Annenberg School', ST_SetSRID(ST_MakePoint(-118.2883432,34.0220383), 4326)),
+('Manas', ST_SetSRID(ST_MakePoint(-118.2939322,34.0288108), 4326)),
+('Lyon Center', ST_SetSRID(ST_MakePoint(-118.2905299,34.0243718), 4326));
+
+-------------------------------------------------------------------------------
+Q6(A) - QUERY TO GET CONVEX HULL COORDINATES - RETURNS COORDINATES OF A POLYGON
+-------------------------------------------------------------------------------
+SELECT ST_astext(ST_ConvexHull(ST_Collect(location::geometry))) as convex_hull FROM mypoints;
+
+-----------------
+RESULT OF QUERY
+-----------------
+"POLYGON((-118.2879914 34.0188336,-118.2913448 34.0208792,-118.2939322 34.0288108,-118.2929785 34.0318873,-118.2900027 34.0324814,-118.2849528 34.0218051,-118.2859253 34.0201484,-118.2879914 34.0188336))"
+
+---------------------------------------------------------------------------------------------------
+Q6(B) - QUERY TO COMPUTE 3 NEAREST NEIGHBOURS - RETURNS A TABLE WITH ID's OF THE NEAREST NEIGBOURS
+---------------------------------------------------------------------------------------------------
+SELECT g1.id As gref_gid,
+g2.id As gnn_gid
+    FROM mypoints As g1, mypoints As g2   
+WHERE g1.id = 1 and g1.id <> g2.id  
+ORDER BY ST_Distance(g1.location,g2.location) 
+LIMIT 3
+
+// Based on the IDs returned, the corresponding coordinates are plotted in the kml file
