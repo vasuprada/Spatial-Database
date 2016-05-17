@@ -1,4 +1,4 @@
-CONTENTS OF THE ZIP
+
 1)points8.zip - .shp,.dbf,.prj,.shx files
 2)starter.kml - plot of the 9 placemarks
 3)convex_nn.kml - plot of convex hull and nearest neighbor
